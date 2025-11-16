@@ -150,6 +150,18 @@ class SettingsSeeder extends Seeder
             ['blogs_button', 'See All'],
             ['home_blogs', ''],
 
+            ['client_title', 'Contact'],
+            ['client_image', null],
+
+            ['client_banner_image', null],
+            ['clientsubtitle_title', 'client'],
+           
+            ['fotter_title', 'Our fotter'],
+            ['fotter_subtitle', 'Take Your Brand To The Next Level!  To Begin Your Success Story.'],
+            ['fotter_description', 'Ready to elevate your brand and achieve exceptional results? Our teamof creative experts is here to turn your vision into reality.'],
+            ['fotter_link', '/fotter'],
+            ['fotter_button', 'See All'],
+
         ];
 
         if (count($items)) {

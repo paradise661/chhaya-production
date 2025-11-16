@@ -3,7 +3,6 @@
     $title = 'Projects';
     $name = 'country';
 @endphp
-
 @section('content')
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
@@ -92,7 +91,6 @@
         @endif
     </div>
 @endsection
-
 @push('js')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -103,7 +101,6 @@
             });
         });
     </script>
-
     <script>
         $('.delete_country').click(function(e) {
             e.preventDefault();

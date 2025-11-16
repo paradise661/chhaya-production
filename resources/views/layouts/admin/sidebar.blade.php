@@ -173,7 +173,7 @@
         <li class="menu-item {{ Request::segment(2) == 'whychooseus' ? 'active' : '' }}">
             <a href="{{ route('whychooseus.index') }}" class="menu-link">
                 <i class='menu-icon tf-icons bx bx-question-mark'></i>
-                Why Choose Us
+                Marketing Overview
             </a>
         </li>
 

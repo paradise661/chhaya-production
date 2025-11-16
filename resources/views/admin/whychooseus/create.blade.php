@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @php
-    $title = 'Why Choose Us';
+    $title = 'Marketing Overview';
     $name = 'whychooseus';
 @endphp
 
