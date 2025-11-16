@@ -3,7 +3,7 @@
         <span class="app-brand-logo demo" style="display: tableblock; width: 100%; margin: auto 2rem;">
             <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
                 <img src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('admin/default/img/logo.png') }}"
-                    width="120px" alt="Destination Marker">
+                    width="120px" alt="Chhaya Production">
             </a>
         </span>
         {{-- <span class="app-brand-text demo menu-text fw-bolder ms-2">Paradise</span> --}}
@@ -74,7 +74,7 @@
         <li class="menu-item {{ Request::segment(2) == 'country' ? 'active' : '' }}">
             <a href="{{ route('country.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-globe-alt"></i>
-                <div>Countries</div>
+                <div>Projects</div>
             </a>
         </li>
 

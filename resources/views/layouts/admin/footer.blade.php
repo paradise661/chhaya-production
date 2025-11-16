@@ -6,7 +6,7 @@
                 document.write(new Date().getFullYear());
             </script>
             ,
-            <a href="{{ route('admin.dashboard') }}">{{ $settings['site_title'] ?? 'Destination Marker' }}</a>
+            <a href="{{ route('admin.dashboard') }}">{{ $settings['site_title'] ?? 'Chhaya Production' }}</a>
         </div>
 
         <div class="mb-2 mb-md-0">

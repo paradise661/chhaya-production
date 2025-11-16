@@ -98,7 +98,7 @@
                 <div class="col-lg-12 text-center hadding1">
                     <p>
                         © {{ date('Y') }}
-                        {!! $settings['site_copyright'] ?? 'u00a9 Destination Marker. All rights reserved' !!}
+                        {!! $settings['site_copyright'] ?? 'u00a9 Chhaya Production. All rights reserved' !!}
                     </p>
                 </div>
             </div>
