@@ -1,10 +1,8 @@
 @extends('layouts.admin.master')
-
 @php
     $title = 'Marketing Overview';
     $name = 'whychooseus';
 @endphp
-
 @section('content')
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
