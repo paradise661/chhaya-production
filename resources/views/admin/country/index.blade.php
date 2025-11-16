@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @php
-    $title = 'Countries';
+    $title = 'Projects';
     $name = 'country';
 @endphp
 
@@ -60,10 +60,10 @@
                                             <i class="tf-icons bx bx-edit text-white"></i>
                                         </a>
 
-                                        <a href="{{ route('university.index', ${$name}->id) }}" type="button"
+                                        {{-- <a href="{{ route('university.index', ${$name}->id) }}" type="button"
                                             class="btn btn-sm btn-icon btn-info">
                                             <i class="tf-icons bx bxs-graduation text-white"></i>
-                                        </a>
+                                        </a> --}}
 
                                         <form action="{{ route($name . '.destroy', ${$name}->id) }}" method="post"
                                             class="d-inline">

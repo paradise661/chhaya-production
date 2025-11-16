@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 @php
-    $title = 'Countries';
+    $title = 'Projects';
     $name = 'country';
 @endphp
 
@@ -147,11 +147,11 @@
                                 Update
                             </button>
 
-                            <a href="{{ route('university.index', ${$name}->id) }}" type="button"
+                            {{-- <a href="{{ route('university.index', ${$name}->id) }}" type="button"
                                 class="btn btn-sm btn-info mt-4">
                                 <i class='bx bxs-graduation'></i>
                                 University
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
 
