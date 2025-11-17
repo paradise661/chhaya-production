@@ -245,9 +245,9 @@
     <div class="row">
       <div class="col-lg-5">
         <div class="testimonial13-header heading20 space-margin60">
-          <h5 data-aos="fade-left" data-aos-duration="800"><img src="assets/img/icons/logo-icons8.svg" alt="">Testimonials</h5>
+          <h5 data-aos="fade-left" data-aos-duration="800"><img src="assets/img/icons/logo-icons8.svg" alt="">{{ $settings['testioninal_title'] ?? '' }}</h5>
           <div class="space16"></div>
-          <h2 class="text-anime-style-3">Success Stories from <br class="d-md-block d-none"> Our Partners</h2>
+          <h2 class="text-anime-style-3">  {{ $settings['testioninal_subtitle'] ?? '' }} <br class="d-md-block d-none"> </h2>
         </div>
       </div>
     </div>
@@ -303,71 +303,57 @@
     <div class="row">
       <div class="col-lg-6 m-auto">
         <div class="team13-header text-center heading20 space-margin60">
-          <h5><img src="{{asset("frontend/assets/img/icons/logo-icons8.svg")}}" alt="">Our Team</h5>
+          <h5><img src="{{asset("frontend/assets/img/icons/logo-icons8.svg")}}" alt="">{{ $settings['teams_title'] ?? '' }}</h5>
           <div class="space16"></div>
-          <h2 class="text-anime-style-3">Our Team: Where Creativity Meets Strategy</h2>
+          <h2 class="text-anime-style-3">{{ $settings['teams_subtitle'] ?? '' }}</h2>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="800">
-        <div class="team13-boxarea">
-          <div class="img1 image-anime">
-            <img src="{{asset("frontend/assets/img/all-images/new-img/team-img1-h13.png")}}" alt="">
+
+      @foreach($teams as $index => $team)
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 200) }}">
+          <div class="team13-boxarea">
+  
+              {{-- Dynamic Image --}}
+              <div class="img1 image-anime">
+                  <img src="{{ asset( $team->image) }}" alt="">
+              </div>
+  
+              <div class="space24"></div>
+  
+              <div class="content-area">
+  
+                  {{-- Dynamic Name --}}
+                  <a href="#">{{ $team->name }}</a>
+                  <div class="space12"></div>
+                  {{-- Dynamic Position --}}
+                  <p>{{ $team->position }}</p>
+              </div>
+              {{-- Dynamic Social Links --}}
+              {{-- <ul>
+                  @if($team->facebook)
+                      <li><a href="{{ $team->facebook }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  @endif
+  
+                  @if($team->instagram)
+                      <li><a href="{{ $team->instagram }}"><i class="fa-brands fa-instagram"></i></a></li>
+                  @endif
+  
+                  @if($team->linkedin)
+                      <li><a href="{{ $team->linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  @endif
+  
+                  @if($team->youtube)
+                      <li><a href="{{ $team->youtube }}"><i class="fa-brands fa-youtube"></i></a></li>
+                  @endif
+              </ul> --}}
           </div>
-          <div class="space24"></div>
-          <div class="content-area">
-            <a href="team.html">Krystal Hermann</a>
-            <div class="space12"></div>
-            <p>CEO & Founder</p>
-          </div>
-          <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-          </ul>
-        </div>
       </div>
-      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
-        <div class="team13-boxarea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/team-img2-h13.png" alt="">
-          </div>
-          <div class="space24"></div>
-          <div class="content-area">
-            <a href="team.html">Arnold Beier V</a>
-            <div class="space12"></div>
-            <p>CEO & Founder</p>
-          </div>
-          <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1200">
-        <div class="team13-boxarea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/team-img3-h13.png" alt="">
-          </div>
-          <div class="space24"></div>
-          <div class="content-area">
-            <a href="team.html">Lucas Hagenes</a>
-            <div class="space12"></div>
-            <p>CEO & Founder</p>
-          </div>
-          <ul>
-            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      @endforeach
+  
+  </div>
+  
   </div>
 </div>
 <!--===== TEAM AREA ENDS =======-->
@@ -377,9 +363,9 @@
     <div class="row align-items-center">
       <div class="col-lg-5">
         <div class="others-header heading20">
-          <h2 class="text-anime-style-3">All Your Client's Marketing Data in One Place</h2>
+          <h2 class="text-anime-style-3">  {{ $settings['courses_title'] ?? '' }}</h2>
           <div class="space16"></div>
-          <p data-aos="fade-left" data-aos-duration="1000">Marketing moves fast, and so do we. With 75+ marketing integration and new releases each month, we’ll keep you up- to-date with all your client’s data in one place.</p>
+          <p data-aos="fade-left" data-aos-duration="1000"> {{ $settings['courses_subtitle'] ?? '' }}</p>
           <div class="space32"></div>
           <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
             <a href="contact.html" class="header-btn21">Get A Free Proposal <i class="fa-solid fa-arrow-right"></i></a>
@@ -389,52 +375,16 @@
       <div class="col-lg-1"></div>
       <div class="col-lg-6">
         <div class="row">
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="800">
-            <div class="img1">
-              <img src="{{asset("frontend/assets/img/all-images/new-img/others-img1-h13.png")}}" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="900">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img2-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img3-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img4-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1200">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img5-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="800">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img6-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="900">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img7-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img8-h13.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
-            <div class="img1">
-              <img src="assets/img/all-images/new-img/others-img9-h13.png" alt="">
-            </div>
-          </div>
-        </div>
+          @foreach($courses as $index => $course)
+              <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 100) }}">
+                  <div class="img1">
+                      {{-- Dynamic Image --}}
+                      <img src="{{ asset('uploads/course/' . $course->image) }}" alt="{{ $course->title }}">
+                  </div>
+              </div>
+          @endforeach
+      </div>
+      
       </div>
     </div>
   </div>
