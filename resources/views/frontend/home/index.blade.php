@@ -396,75 +396,47 @@
       <div class="row">
           <div class="col-lg-5 m-auto">
               <div class="blog4-header text-center heading20 space-margin60">
-                  <h5 data-aos="fade-up" data-aos-duration="1000"><img src="assets/img/icons/logo-icons8.svg" alt="">Blog & News</h5>
+                  <h5 data-aos="fade-up" data-aos-duration="1000"><img src="assets/img/icons/logo-icons8.svg" alt="">{{ $settings['blogs_title'] ?? '' }}</h5>
                   <div class="space16"></div>
-                  <h2 class="text-anime-style-3">Agency Insights: Trends, Tips & More</h2>
+                  <h2 class="text-anime-style-3">{{ $settings['blogs_subtitle'] ?? '' }}</h2>
               </div>
           </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-6" data-aos="zoom-out" data-aos-duration="800">
-          <div class="blog-auhtor-boxarea">
-            <ul>
-              <li><a href="#"><i class="fa-regular fa-circle-user"></i>John Doe</a></li>
-              <li class="m-0"><a href="#"><i class="fa-solid fa-calendar-days"></i> 12 Feb 2024</a></li>
-            </ul>
-            <div class="space24"></div>
-            <div class="img1 image-anime">
-              <img src="{{asset("frontend/assets/img/all-images/new-img/blog-img1-h13.png")}}" alt="">
+        @foreach($blogs as $index => $blog)
+            <div class="col-lg-4 col-md-6" data-aos="zoom-out" data-aos-duration="{{ 800 + ($index * 200) }}">
+                
+                <div class="blog-auhtor-boxarea">
+                    
+                    {{-- Author and Date --}}
+                    <ul>
+                        <li><a href="#"><i class="fa-regular fa-circle-user"></i>{{ $blog->author }}</a></li>
+                        <li class="m-0"><a href="#"><i class="fa-solid fa-calendar-days"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('d M Y') }}</a></li>
+                    </ul>
+    
+                    <div class="space24"></div>
+    
+                    {{-- Blog Image --}}
+                    <div class="img1 image-anime">
+                        <img src="{{ asset( $blog->image) }}" alt="{{ $blog->title }}">
+                    </div>
+    
+                    <div class="space24"></div>
+    
+                    {{-- Blog Content --}}
+                    <div class="blog-content-area">
+                        <a href="{{ route('frontend.blogsingle', $blog->slug) }}">{{ $blog->title }}</a>
+                        <div class="space16"></div>
+                        <p>{{ Str::limit($blog->excerpt, 120) }}</p>
+                        <div class="space24"></div>
+                        <a href="{{ route('frontend.blogsingle', $blog->slug) }}" class="readmore">Learn More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="space24"></div>
-            <div class="blog-content-area">
-              <a href="blog-single.html">Unleashing Creativity: The Art and Science of Effective Advertising</a>
-              <div class="space16"></div>
-              <p>t’s a delicate balance & science, combining creative vision with data-driven strategy.</p>
-              <div class="space24"></div>
-              <a href="blog-single.html" class="readmore">Learn More<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="zoom-out" data-aos-duration="1000">
-          <div class="blog-auhtor-boxarea">
-            <ul>
-              <li><a href="#"><i class="fa-regular fa-circle-user"></i>John Doe</a></li>
-              <li><a href="#"><i class="fa-solid fa-calendar-days"></i> 12 Feb 2024</a></li>
-            </ul>
-            <div class="space24"></div>
-            <div class="img1 image-anime">
-                <img src="{{asset("frontend/assets/img/all-images/new-img/blog-img2-h13.png")}}" alt="">
-             </div>
-            <div class="blog-content-area">
-              <div class="space24"></div>
-              <a href="blog-single.html">Exploring Strategies, Trends, and Insights to Elevate Your Brand</a>
-              <div class="space16"></div>
-              <p>In this blog, we delve into the elements that make advertising truly impactful. </p>
-              <div class="space24"></div>
-              <a href="blog-single.html" class="readmore">Learn More<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6" data-aos="zoom-out" data-aos-duration="1200">
-          <div class="blog-auhtor-boxarea">
-            <ul>
-              <li><a href="#"><i class="fa-regular fa-circle-user"></i>John Doe</a></li>
-              <li><a href="#"><i class="fa-solid fa-calendar-days"></i> 12 Feb 2024</a></li>
-            </ul>
-            <div class="space24"></div>
-            <div class="img1 image-anime">
-                <img src="assets/img/all-images/new-img/blog-img3-h13.png" alt="">
-             </div>
-            <div class="blog-content-area">
-              <div class="space24"></div>
-              <a href="blog-single.html">Unleashing Creativity: Trends Shaping the Future of Advertising</a>
-              <div class="space16"></div>
-              <p>Explore how emerging trends and innovative strategies are revolutionizing the advertising</p>
-              <div class="space24"></div>
-              <a href="blog-single.html" class="readmore">Learn More<i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+        @endforeach
+    </div>
+    
   </div>
 </div>
 <!--===== BLOG AREA ENDS =======-->
