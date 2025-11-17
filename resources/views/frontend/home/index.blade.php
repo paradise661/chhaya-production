@@ -1,41 +1,67 @@
 @extends('layouts.frontend.master')
 @section('content')
-    
-  
 <!--===== MOBILE HEADER STARTS =======-->
-
 <!--===== HERO AREA STARTS =======-->
 <div class="hero13-section-area">
-    <div class="img2">
-        <img src={{asset("frontend/assets/img/bg/header-bg13.png")}} alt="" class="header-bg13">
-    </div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="hero13-header heading19">
-                    <h5><img src="{{asset("frontend/assets/img/icons/logo-icons8.svg")}}" alt=""> Top #1 SEO & Advertising Agency</h5>
-                    <div class="space16"></div>
-                    <h2>We Build Campaigns That Make Brands Unforgettable</h2>
-                    <div class="space24"></div>
-                    <p>At our agency, we believe that creativity has the power to transform brands and connect them with their audiences in meaningful ways.</p>
-                    <div class="space32"></div>
-                    <div class="btn-area1">
-                        <a href="contact.html" class="header-btn21">Our Success Stories <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="contact.html" class="header-btn21 btn2">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-5">
-                <div class="img1">
-                    <img src="{{asset("frontend/assets/img/all-images/new-img/header-img13.png")}}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--===== HERO AREA ENDS =======-->
+  <div class="img2">
+      <img src="{{ asset('frontend/assets/img/bg/header-bg13.png') }}" alt="" class="header-bg13">
+  </div>
 
+  <div class="container">
+      <div class="row align-items-center">
+
+          <div class="col-lg-6">
+              <div class="hero13-header heading19">
+
+                  {{-- Dynamic Small Title --}}
+                  <h5>
+                      <img src="{{ asset('frontend/assets/img/icons/logo-icons8.svg') }}" alt="">
+                      {{ $sliders->title ?? '' }}
+                  </h5>
+
+                  <div class="space16"></div>
+
+                  {{-- Dynamic Main Title --}}
+                  <h2>{{ $sliders->short_description ?? '' }}</h2>
+
+                  <div class="space24"></div>
+
+                  {{-- Dynamic Description --}}
+                  <p>{!! $sliders->description ?? 'Default description goes here.' !!}</p>
+
+                  <div class="space32"></div>
+
+                  <div class="btn-area1">
+                      {{-- Dynamic Button 1 --}}
+                      <a href="{{ route('frontend.contact')}}" class="header-btn21">
+                          {{ $sliders->btn_text1 ?? 'Contact Us' }}
+                          <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+
+                      {{-- Dynamic Button 2 --}}
+                      {{-- <a href="{{ $sliders->btn_link2 ?? '#' }}" class="header-btn21 btn2">
+                          {{ $sliders->btn_text2 ?? 'Button Two' }}
+                          <i class="fa-solid fa-arrow-right"></i>
+                      </a> --}}
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="col-lg-1"></div>
+
+          <div class="col-lg-5">
+              <div class="img1">
+                  {{-- Dynamic Slider Image --}}
+                  <img src="{{ asset($sliders->image) }}" alt="">
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<!--===== HERO AREA ENDS =======-->
 <!--===== ABOUT AREA STARTS =======-->
 <div class="about13-section-area sp1">
     <div class="container">
@@ -112,7 +138,6 @@
     </div>
 </div>
 <!--===== ABOUT AREA ENDS =======-->
-
 <!--===== SERVICE AREA STARTS =======-->
 <div class="service13-section-area sp2">
   <div class="container">
@@ -235,7 +260,6 @@
   </div>
 </div>
 <!--===== SERVICE AREA ENDS =======-->
-
 <!--===== WORK AREA STARTS =======-->
 <div class="work13-section-area sp1">
   <div class="container">
@@ -330,7 +354,6 @@
   </div>
 </div>
 <!--===== WORK AREA ENDS =======-->
-
 <!--===== TESTIMONIAL AREA STARTS =======-->
 <div class="testimonial13-section-area sp1">
   <div class="container">
@@ -444,7 +467,6 @@
   </div>
 </div>
 <!--===== TESTIMONIAL AREA ENDS =======-->
-
 <!--===== TEAM AREA STARTS =======-->
 <div class="team13-section-area sp2">
   <div class="container">
@@ -519,7 +541,6 @@
   </div>
 </div>
 <!--===== TEAM AREA ENDS =======-->
-
 <!--===== OTHERS AREA STARTS =======-->
 <div class="others13-section-area sp1">
   <div class="container">
@@ -589,7 +610,6 @@
   </div>
 </div>
 <!--===== OTHERS AREA ENDS =======-->
-
 <!--===== BLOG AREA STARTS =======-->
 <div class="blog13-section-area sp2">
   <div class="container">
@@ -668,7 +688,6 @@
   </div>
 </div>
 <!--===== BLOG AREA ENDS =======-->
-
 <!--===== CTA AREA STARTS =======-->
 <div class="cta13-section-area sp1">
   <img src="assets/img/bg/cta13-bg1.png" alt="" class="cta13-bg1">
