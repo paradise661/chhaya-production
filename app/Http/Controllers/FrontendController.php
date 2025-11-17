@@ -37,7 +37,7 @@ class FrontendController extends Controller
         $countryIds = $home_country && $home_country->value
             ? explode(',', $home_country->value)
             : [];
-        $countries = Country::whereIn('id', $countryIds)->where('status', 1)->get();
+        $projects = Country::whereIn('id', $countryIds)->where('status', 1)->get();
 
         $home_service = Settings::where('key', 'home_services')->first();
         $serviceIds = $home_service && $home_service->value
@@ -64,7 +64,7 @@ class FrontendController extends Controller
         $blogs = Blog::whereIn('id', $blogIds)->where('status', 1)->get();
         $universities = University::where('status', 1)->oldest("order")->get();
 
-        return view('frontend.home.index', compact('sliders', 'universities', 'testimonials', 'courses', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'why_us', 'teams', 'testimonials'));
+        return view('frontend.home.index', compact('sliders', 'universities', 'testimonials', 'courses', 'projects', 'blogs', 'services', 'about_us', 'why_choose_us', 'why_us', 'teams', 'testimonials'));
     }
 
     public function about()

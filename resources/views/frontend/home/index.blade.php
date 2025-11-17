@@ -52,7 +52,6 @@
       </div>
   </div>
 </div>
-
 <!--===== HERO AREA ENDS =======-->
 <!--===== ABOUT AREA STARTS =======-->
 <div class="about13-section-area sp1">
@@ -139,18 +138,17 @@
       <div class="col-lg-12">
         <div class="header-area-service space-margin60">
           <div class="heading20">
-            <h5 class="fade-left" data-aos-duration="800"><img src="assets/img/icons/logo-icons8.svg" alt="">Our Services</h5>
+            <h5 class="fade-left" data-aos-duration="800"><img src="assets/img/icons/logo-icons8.svg" alt="">{{ $settings['services_title'] ?? '' }}</h5>
             <div class="space16"></div>
-            <h2 class="text-anime-style-3">Tailored Solutions For <br class="d-md-block d-none"> Every Brand</h2>
+            <h2 class="text-anime-style-3"> {{ $settings['services_subtitle'] ?? '' }}</h2>
           </div>
           <div class="btn-area1">
-            <a href="service1.html" class="header-btn21">View All Service <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="{{route('frontend.service')}}" class="header-btn21">View All Service <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
-
       @foreach($services as $index => $service)
           <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 100) }}">
               <div class="service13-boxarea">
@@ -192,100 +190,56 @@
   </div>
 </div>
 <!--===== SERVICE AREA ENDS =======-->
-<!--===== WORK AREA STARTS =======-->
+<!--===== project AREA STARTS =======-->
 <div class="work13-section-area sp1">
   <div class="container">
     <div class="row">
       <div class="col-lg-5 m-auto">
         <div class="work-haader text-center heading20 space-margin60">
-          <h5 data-aos="fade-left" data-aos-duration="800"><img src="assets/img/icons/logo-icons8.svg" alt="">Our Project</h5>
+          <h5 data-aos="fade-left" data-aos-duration="800">
+            <img src="assets/img/icons/logo-icons8.svg" alt="">{{ $settings['countries_title'] ?? '' }}
+          </h5>
           <div class="space16"></div>
-          <h2 class="text-anime-style-3">The Work That Drives Brands Forward</h2>
+          <h2 class="text-anime-style-3">{{ $settings['countries_subtitle'] ?? '' }}</h2>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-5 col-md-6" data-aos="zoom-in" data-aos-duration="700">
-        <div class="project13-boxrea">
-          <div class="img1 image-anime">
-            <img src="{{asset("frontend/assets/img/all-images/new-img/service-img1-h13.png")}}" alt="">
-          </div>
-          <div class="content-area">
-            <span>#Advertising Agency</span>
-            <div class="space16"></div>
-            <a href="service1.html">A branding & visual <br> design overhaul.</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="800">
-        <div class="project13-boxrea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/service-img2-h13.png" alt="">
-          </div>
-          <div class="content-area">
-            <span>#Advertising Agency</span>
-            <div class="space16"></div>
-            <a href="service1.html">A branding & visual <br> design overhaul.</a>
+      @foreach ($projects as $project)
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+          <div class="project13-boxrea">
+
+            {{-- Dynamic Image (Only One) --}}
+            <div class="img1 image-anime">
+              <img src="{{ asset($project->image) }}" alt="">
+            </div>
+
+            {{-- Dynamic Content --}}
+            <div class="content-area">
+              <span>#{{ $project->title ?? 'Advertising Agency' }}</span>
+              <div class="space16"></div>
+              <a href="{{ route('frontend.projectsingle', $project->slug ?? $project->id) }}">
+                {{ $project->short_description }}
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="900">
-        <div class="project13-boxrea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/service-img3-h13.png" alt="">
-          </div>
-          <div class="content-area">
-            <span>#Advertising Agency</span>
-            <div class="space16"></div>
-            <a href="service1.html">A branding & visual <br> design overhaul.</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-duration="1000">
-        <div class="project13-boxrea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/service-img4-h13.png" alt="">
-          </div>
-          <div class="content-area">
-            <span>#Advertising Agency</span>
-            <div class="space16"></div>
-            <a href="service1.html">A branding & visual <br> design overhaul.</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-5 col-md-6" data-aos="zoom-in" data-aos-duration="1100">
-        <div class="project13-boxrea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/service-img5-h13.png" alt="">
-          </div>
-          <div class="content-area">
-            <span>#Advertising Agency</span>
-            <div class="space16"></div>
-            <a href="service1.html">A branding & visual <br> design overhaul.</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="1200">
-        <div class="project13-boxrea">
-          <div class="img1 image-anime">
-            <img src="assets/img/all-images/new-img/service-img6-h13.png" alt="">
-          </div>
-          <div class="content-area">
-            <span>#Advertising Agency</span>
-            <div class="space16"></div>
-            <a href="service1.html">A branding & visual <br> design overhaul.</a>
-          </div>
-        </div>
-      </div>
+      @endforeach
+
       <div class="col-lg-12">
         <div class="btn-area1 text-center">
-          <a href="service1.html" class="header-btn21">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="{{ route('frontend.project') }}" class="header-btn21">
+            View All Projects <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 </div>
-<!--===== WORK AREA ENDS =======-->
+
+<!--===== project AREA ENDS =======-->
 <!--===== TESTIMONIAL AREA STARTS =======-->
 <div class="testimonial13-section-area sp1">
   <div class="container">
