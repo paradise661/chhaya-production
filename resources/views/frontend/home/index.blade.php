@@ -238,7 +238,6 @@
     </div>
   </div>
 </div>
-
 <!--===== project AREA ENDS =======-->
 <!--===== TESTIMONIAL AREA STARTS =======-->
 <div class="testimonial13-section-area sp1">
@@ -254,102 +253,47 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <div class="testimonial13-slider owl-carousel">
-          <div class="testimonial13-boxrea">
-            <ul>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-            </ul>
-            <div class="space24"></div>
-            <p>“Our clients’ success is our greatest achievement. We pride ourselves on building strong, collaborative relationships that drive exceptional results. From innovative branding strategies powerful multi-channel campaigns, we work tirelessly to exceed expectations.”</p>
-            <div class="space24"></div>
-            <div class="name-area">
-              <div class="name-text">
-                <img src="{{("frontend/assets/img/all-images/new-img/testimonial-img1-h13.png")}}" alt="">
-                <div class="content">
-                  <a href="#">Arturo Reynolds</a>
-                  <div class="space12"></div>
-                  <p>Company Owner</p>
-                </div>
+          <div class="testimonial13-slider owl-carousel">
+  
+              @foreach($testimonials as $test)
+              <div class="testimonial13-boxrea">
+  
+                  {{-- Static Stars --}}
+                  <ul>
+                      @for($i = 1; $i <= 5; $i++)
+                          <li><i class="fa-solid fa-star"></i></li>
+                      @endfor
+                  </ul>
+  
+                  <div class="space24"></div>
+                  {{-- Dynamic Description --}}
+                  <p>“{!! $test->description !!}”</p>
+                  <div class="space24"></div>
+                  <div class="name-area">
+                      <div class="name-text">
+                          {{-- Dynamic Image (Only 1 image dynamic) --}}
+                          <img src="{{ asset($test->image) }}" alt="">
+                          <div class="content">
+                              {{-- Dynamic Name --}}
+                              <a href="#">{{ $test->name }}</a>
+                              <div class="space12"></div>
+                              {{-- Dynamic Position / Role --}}
+                              <p>{{ $test->position ?? 'Client' }}</p>
+                          </div>
+
+                      </div>
+  
+                      {{-- Static SVG Icon --}}
+                      <img src="{{ asset('frontend/assets/img/icons/quito8.svg') }}" alt="" class="quito8">
+                  </div>
+  
               </div>
-              <img src="{{asset("frontend/assets/img/icons/quito8.svg")}}" alt="" class="quito8">
-            </div>
+              @endforeach
+  
           </div>
-          <div class="testimonial13-boxrea">
-            <ul>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-            </ul>
-            <div class="space24"></div>
-            <p>“Our clients consistently commend us for our ability to turn ambitious ideas into successful campaigns. Their feedback highlights dedication to understanding their unique needs, crafting tailored solutions, and delivering exceptional results pride in our collaborative approach.”</p>
-            <div class="space24"></div>
-            <div class="name-area">
-              <div class="name-text">
-                <img src="assets/img/all-images/new-img/testimonial-img2-h13.png" alt="">
-                <div class="content">
-                  <a href="#">Stewart Parisian</a>
-                  <div class="space12"></div>
-                  <p>Company Owner</p>
-                </div>
-              </div>
-              <img src="assets/img/icons/quito8.svg" alt="" class="quito8">
-            </div>
-          </div>
-          <div class="testimonial13-boxrea">
-            <ul>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-            </ul>
-            <div class="space24"></div>
-            <p>“Our clients’ success is our greatest achievement. We pride ourselves on building strong, collaborative relationships that drive exceptional results. From innovative branding strategies powerful multi-channel campaigns, we work tirelessly to exceed expectations.”</p>
-            <div class="space24"></div>
-            <div class="name-area">
-              <div class="name-text">
-                <img src="assets/img/all-images/new-img/testimonial-img1-h13.png" alt="">
-                <div class="content">
-                  <a href="#">Arturo Reynolds</a>
-                  <div class="space12"></div>
-                  <p>Company Owner</p>
-                </div>
-              </div>
-              <img src="assets/img/icons/quito8.svg" alt="" class="quito8">
-            </div>
-          </div>
-          <div class="testimonial13-boxrea">
-            <ul>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-              <li><i class="fa-solid fa-star"></i></li>
-            </ul>
-            <div class="space24"></div>
-            <p>“Our clients consistently commend us for our ability to turn ambitious ideas into successful campaigns. Their feedback highlights dedication to understanding their unique needs, crafting tailored solutions, and delivering exceptional results pride in our collaborative approach.”</p>
-            <div class="space24"></div>
-            <div class="name-area">
-              <div class="name-text">
-                <img src="assets/img/all-images/new-img/testimonial-img2-h13.png" alt="">
-                <div class="content">
-                  <a href="#">Stewart Parisian</a>
-                  <div class="space12"></div>
-                  <p>Company Owner</p>
-                </div>
-              </div>
-              <img src="assets/img/icons/quito8.svg" alt="" class="quito8">
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
+  
   </div>
 </div>
 <!--===== TESTIMONIAL AREA ENDS =======-->
