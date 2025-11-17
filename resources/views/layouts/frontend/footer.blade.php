@@ -1,107 +1,71 @@
- <!--=====Footer start=======-->
-    <footer class="footer-area padding-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="single-footer mr50 hadding2">
-                        <div class="site-logo home1-site-logo">
-                            <a href="#">
-                                <img src="{{ asset($settings['site_main_logo']) }}" style="height: 150px" alt="" />
-                            </a>
-                        </div>
-                        <div class="space30"></div>
-                        <div class="hadding9">
-                            <p>
-                                {{ $settings['site_information'] }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="space24"></div>
-                    <div class="social social9">
-                        <ul>
-                            @foreach ($socials as $item)
-                            <li><a href="{{ $item->link }}"><i class="{{ $item->icon }}"></i></a></li>
-                        @endforeach
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="col-lg col-sm-6 col-6 hadding2">
-                    <div class="single-footer single-footer9">
-                        <h3>
-                            Explore
-                        </h3>
-                        <div>
-                            <ul>
-                                <li><a href="{{ route('frontend.about') }}"><span><i class="fa-solid fa-plane"></i></span> About</a>
-                                </li>
-                                <li><a href="{{ route('frontend.service') }}"><span><i class="fa-solid fa-plane"></i></span> Service</a>
-                                </li>
-                                <li><a href="{{ route('frontend.blog') }}"><span><i class="fa-solid fa-plane"></i></span> Blog</a></li>
-                                <li><a href="{{ route('frontend.abroad') }}"><span><i class="fa-solid fa-plane"></i></span> Countries</a>
-                                </li>
-                                <li><a href="{{ route('frontend.contact') }}"><span><i class="fa-solid fa-plane"></i></span>
-                                        Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg col-sm-6 col-6 hadding2">
-                    <div class="single-footer single-footer9">
-                        <h3>
-                           Country
-                        </h3>
-                        <div>
-                            <ul>
-                                @foreach ($footer_countries_1 as $country)
-                                <li><a href="{{ route('frontend.abroadsingle', $country->slug) }}"><span><i class="fa-solid fa-plane"></i></span> {{ $country->title }}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 hadding2">
-                    <div class="single-footer-contact single-footer single-footer2">
-                        <h3>
-                            Get in touch
-                        </h3>
-                        <div class="padding-left20">
-                            <div class="hadding1">
-                                <p style="color: #181A1C;">{{ $settings['contact_location'] ?? 'asmita' }}</p>
-                            </div>
-
-                            <div class="contact-icon-box2">
-                                <div class="contact-icon">
-                                    <img src="{{asset("frontend/assets/img/icons/contact9-icon2.svg")}}" alt="">
-                                </div>
-                                <div class="contact-icon-h">
-                                    <a href="tel:921-888-0022">{{ $settings['contact_phone'] ?? '+123456789' }}</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-icon-box2">
-                                <div class="contact-icon">
-                                    <img src="{{asset('frontend/assets/img/icons/contact9-icon1.svg')}}" alt="">
-                                </div>
-                                <div class="contact-icon-h">
-                                    <a href="mailto:{{ $settings['contact_email'] ?? 'asmita' }}">{{ $settings['contact_email'] ?? 'asmita' }}</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center copyright2">
-                <div class="col-lg-12 text-center hadding1">
-                    <p>
-                        © {{ date('Y') }}
-                        {!! $settings['site_copyright'] ?? 'u00a9 Chhaya Production. All rights reserved' !!}
-                    </p>
-                </div>
-            </div>
+<!--===== FOOTER AREA STARTS =======-->
+<div class="footer13-section-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-logo-area">
+          <img src="{{asset("frontend/assets/img/logo/logo14.png")}}" alt="">
+          <p>By optimizing content, leveraging relevant keywords, and adhering to best practices, businesses can secure prominent position (SEO)</p>
+          <ul>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          </ul>
         </div>
-    </footer>
-    <!--=====Footer end=======-->
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-logo-area1">
+          <h3>About Link</h3>
+          <ul>
+            <li><a href="blog.html">Our Blog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service1.html">Services</a></li>
+            <li><a href="case.html">Marketing</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-logo-area2">
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="404-4.html"><img src="assets/img/icons/email.svg" alt=""><span>Infoseoc@gmail.com</span></a></li>
+            <li><a href="#"><img src="assets/img/icons/location.svg" alt=""><span>8708 Technology Forest <br class="d-lg-block d-none"> Pl Suite 125 -G, The <br class="d-lg-block d-none"> Woodlands, TX 773</span></a></li>
+            <li><a href="tel:123-456-7890"><img src="assets/img/icons/phone.svg" alt=""><span>123-456-7890</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-logo-area3">
+          <h3>Subscribe Our Newsletter</h3>
+          
+          <form action="#">
+            <input type="text" placeholder="Enter Your email">
+            <div class="space16"></div>
+            <button class="header-btn21"> Subscribe <span><i class="fa-solid fa-arrow-right"></i></span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="space50 d-lg-block d-none"></div>
+    <div class="space40 d-lg-none d-block"></div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="copyright-area">
+          <div class="pera">
+            <p>ⓒCopyright 2024 SEOC . All rights reserved</p>
+          </div>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#" class="m-0"> Privacy Policy </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--===== FOOTER AREA ENDS =======-->
