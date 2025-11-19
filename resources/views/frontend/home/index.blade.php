@@ -447,13 +447,13 @@
     <div class="row">
       <div class="col-lg-8 m-auto">
         <div class="cta13-header text-center heading20">
-          <h2 class="text-anime-style-3">Take Your Brand To The Next Level! <br class="d-lg-block d-none">To Begin Your Success Story.</h2>
+          <h2 class="text-anime-style-3">{{ $settings['whyChooseUs_title'] ?? '' }}</h2>
             <div class="space16"></div>
-          <p data-aos="fade-up" data-aos-duration="1000">Ready to elevate your brand and achieve exceptional results? Our team <br class="d-lg-block d-none"> of creative experts is here to turn your vision into reality. </p>
+          <p data-aos="fade-up" data-aos-duration="1000">{{ $settings['whyChooseUs_subtitle'] ?? '' }} </p>
           <div class="space40"></div>
           <div class="btn-area1" data-aos="fade-up" data-aos-duration="1200">
-            <a href="contact.html" class="header-btn21">Get Started Today <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="contact.html" class="header-btn21 btn2">Request a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+            {{-- <a href="contact.html" class="header-btn21">Get Started Today <i class="fa-solid fa-arrow-right"></i></a> --}}
+            <a href="contact.html" class="header-btn21 btn2">Contact Us<i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
