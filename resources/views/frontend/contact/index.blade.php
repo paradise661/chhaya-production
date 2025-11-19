@@ -1,4 +1,5 @@
 @extends('layouts.frontend.master')
+
 @section('seo')
     @include('frontend.seo', [
         'name' => $contact_page->seo_title ?? '',
@@ -10,168 +11,223 @@
         'updated_at' => $contact_page->updated_at,
     ])
 @endsection
-{{--
-<div class="col-lg-6">
-    <div class="section_title">
-        <h4>{{ $settings['contact_form_title'] ?? '' }}</h4>
 
-        <h1>{{ $settings['contact_form_subtitle'] ?? '' }}</h1>
-        <p>{{ $settings['contact_form_description'] ?? '' }}</p>
+@section('content')
+
+<!--===== HERO AREA STARTS =======-->
+<div class="about-header-area" 
+     style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;">
+
+    <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" 
+         alt="" class="elements1 aniamtion-key-1">
+
+    <img src="{{ asset('frontend/assets/img/elements/star2.png') }}" 
+         alt="" class="star2 keyframe5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto">
+                <div class="about-inner-header heading9 text-center">
+                    <h1>Contact Us</h1>
+                    <a href="{{ url('/') }}">Home 
+                        <i class="fa-solid fa-angle-right"></i> 
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="contact_main_info">
-        <div class="call-do-action-info">
-            <div class="call-do-social_icon">
-                <i class="fas fa-phone-alt"></i>
+</div>
+<!--===== HERO AREA ENDS =======-->
+
+<!--===== CONTACT AREA STARTS =======-->
+<div class="contact-main-inner-area sp1">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+                <div class="heading2 contact-header">
+                    <h5>Contact Us</h5>
+                    <h2>Get in Touch with SEOC We Value Your Connection</h2>
+                    <p>Our dedicated team is committed to providing prompt and effective support to ensure your needs are met. We believe in open communication and are always ready to listen. Reach out to us via phone, email, or live chat, or visit our office during business hours.</p>
+
+                    <div class="space32"></div>
+
+                    <div class="number-address-area">
+                        <div class="phone-number">
+                            <div class="img1">
+                                <img src="{{ asset('admin/assets/img/call.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <p>Phone Number</p>
+                                <a href="tel:123-456-7890">123-456-7890</a>
+                            </div>
+                        </div>
+
+                        <div class="phone-number m-0">
+                            <div class="img1">
+                                <img src="{{ asset('admin/assets/img/email.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <p>Email Address</p>
+                                <a href="mailto:Infoseoc@gmail.com">Infoseoc@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space50"></div>
+
+                    <div class="number-address-area2">
+                        <div class="phone-number">
+                            <div class="img1">
+                                <img src="{{ asset('admin/assets/img/location.png') }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a href="#">
+                                    8708 Technology Forest Pl Suite 
+                                    <br class="d-lg-block d-none">
+                                    125 -G, The Woodlands, TX 773
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="phone-number">
+                            <a href="https://www.google.com/maps/@24.0098057,88.9892437,15z?entry=ttu" 
+                               class="map" target="_blank">View Our Map</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="call_info">
-                <p>Call us Anytime</p>
-                <h3>{{ $settings['contact_phone'] ?? '+123456789' }}</h3>
+
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <div class="contact-form-area">
+                    <h4>Get In Touch</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="input-area">
+                                <input type="text" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="input-area">
+                                <input type="text" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="input-area">
+                                <input type="email" placeholder="Email Address">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="input-area">
+                                <input type="number" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="input-area">
+                                <textarea placeholder="Your Message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="header-btn21">
+                                Get In Touch 
+                                <span><i class="fa-solid fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="call-do-action-info">
-            <div class="call-do-social_icon">
-                <i class="fas fa-envelope-open"></i>
-            </div>
-            <div class="call_info">
-                <p>Email us Anytime</p>
-                <h3>{{ $settings['contact_email'] ?? 'asmita' }}</h3>
+    </div>
+</div>
+
+<!-- Location Boxes -->
+{{-- <div class="location-section-area sp2 bg2">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 m-auto">
+                <div class="location-header text-center heading2">
+                    <h5>Location</h5>
+                    <h2>Our Location</h2>
+                </div>
             </div>
         </div>
-        <div class="call-do-action-info">
-            <div class="call-do-social_icon">
-                <i class="fas fa-map-marker-alt"></i>
+
+        <div class="space60 d-lg-block d-none"></div>
+        <div class="space30 d-lg-none d-block"></div>
+
+        <div class="row">
+
+            @foreach (['San Francisco', 'Chicago', 'Boston'] as $city)
+            <div class="col-lg-4 col-md-6">
+                <div class="location-boxes">
+                    <div class="img1">
+                        <img src="{{ asset('frontend/assets/img/icons/location3.svg') }}" alt="">
+                    </div>
+
+                    <div class="space32"></div>
+
+                    <a href="#">{{ $city }} <br class="d-lg-block d-none"> Address Line Here</a>
+
+                    <div class="space24"></div>
+
+                    <p>Phone Number</p>
+                    <a href="tel:123-456-7890">123-456-7890</a>
+
+                    <div class="space32"></div>
+
+                    <a href="https://www.google.com/maps/@24.0098057,88.9892437,15z?entry=ttu" 
+                       class="map" target="_blank">View Our Map</a>
+                </div>
             </div>
-            <div class="call_info">
-                <p>Our Locations</p>
-                <span>{{ $settings['contact_location'] ?? 'asmita' }}</span>
+            @endforeach
+
+        </div>
+
+    </div>
+</div> --}}
+
+<!-- Google Map -->
+<div class="mapouter">
+    <div class="gmap_canvas">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4506257.120552435!2d88.67021924228865!3d21.954385721237916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1704088968016!5m2!1sen!2sbd"
+                width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+<!-- CTA Section -->
+{{-- <div class="cta-section-area">
+    <img src="{{ asset('frontend/assets/img/bg/cta-bg1.png') }}" 
+         alt="" class="cta-bg1 aniamtion-key-2">
+
+    <img src="{{ asset('frontend/assets/img/bg/cta-bg2.png') }}" 
+         alt="" class="cta-bg2 aniamtion-key-1">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 m-auto">
+                <div class="cta-header-area text-center sp4 heading2">
+                    <h2>Ready To Take Your SEO To <br class="d-md-block d-none"> The Next Level</h2>
+                    <p>Effective SEO strategies not only elevate a website's visibility but also drive 
+                       targeted traffic, enhance user experience,</p>
+
+                    <div class="btn-area text-center">
+                        <a href="{{ url('contact') }}" class="header-btn1">
+                            Free Consultation 
+                            <span><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 </div> --}}
-@section('content')
-    <div class="page-hero-area _relative about-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 m-auto text-center">
-                    <div class="page-hero-hadding">
-                        <h1>Contact Us </h1>
-                        <div class="space16"></div>
-                        <div class="page-hero-p">
-                            <a href="index1.html">Home</a>
-                            <span><i class="fa-solid fa-angle-right"></i></span>
-                            <p>Contact Us</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--=====contact start=======-->
-    <div class="contact7"  style="background-color: #FFF8F6;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="hadding2 contact7-hadding">
-                        <span class="span">{{ $settings['contact_form_title'] ?? '' }}</span>
-                        <div class="space16"></div>
-                        <h1>{{ $settings['contact_form_subtitle'] ?? '' }}</h1>
-                        <div class="space16"></div>
-                        <p>{{ $settings['contact_form_description'] ?? '' }} </p>
-                        <div class="space8"></div>
-                        <form action="{{ route('frontend.contact.submit') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="contact7-form">
-                                <div class="contact7-input">
-                                    <input name="name" type="text" placeholder="Your Name*">
-                                </div>
-                                <div class="contact7-input">
-                                    <input name="email" type="email" placeholder="Email Address*">
-                                </div>
-                                <div class="contact7-input">
-                                    <textarea name="phone" cols="30" rows="3" placeholder="Write a Message*"></textarea>
-                                </div>
-                                <div class="space32"></div>
-                                <button class="theme-btn5 font-f-7">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="contact-map contact-map2">
-                        <div class="img100 img5" style="z-index: 9; position: relative;">
-                            <img src="{{ asset('frontend/assets/img/image/contact-page.png') }}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="contact7-icon-box contact7-icon-box2">
-                        <div class="contact7-icon">
-                            <img src="{{ asset('frontend/assets/img/icons/location.png') }}" alt="">
-                        </div>
-                        <div class="contact7-iocn-hadding">
-                            <h4><a href="#">Office Address</a></h4>
-                            <div class="space6"></div>
-                            <a href="#">{{ $settings['contact_location'] ?? 'asmita' }}</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="contact7-icon-box contact7-icon-box2">
-                        <div class="contact7-icon">
-                            <img src="{{ asset('frontend/assets/img/icons/email.png') }}" alt="">
-                        </div>
-                        <div class="contact7-iocn-hadding">
-                            <h4><a href="#">Contact Number</a></h4>
-                            <div class="space6"></div>
-                            {{ $settings['contact_phone'] ?? '+123456789' }}
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact7-icon-box contact7-icon-box2">
-                        <div class="contact7-icon">
-                            <img src="{{ asset('frontend/assets/img/icons/email1.png') }}" alt="">
-                        </div>
-                        <div class="contact7-iocn-hadding">
-                            <h4><a href="#">Email Address</a></h4>
-                            <div class="space6"></div>
-                            {{ $settings['contact_email'] ?? 'asmita' }}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="contact-map-page">
-        <iframe
-            src="{{ $settings['site_location_url'] ?? '' }}" width="600"
-            height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <!--=====contact end=======-->
-     <!--=====cta start=======-->
-     <div class="cta2" style="background-color: #fe6032;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="cta2-hadding2">
-                        <h1>We're Committed to Making your Visa Application Process</h1>
-                        <div class="space16"></div>
-                        <p>Visa Consulting doesn't just handle the paperwork; they genuinely care about their clients'
-                            success. My consultant not only helped with the application visa consulting.</p>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--=====cta end=======-->
 @endsection

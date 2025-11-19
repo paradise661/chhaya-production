@@ -102,8 +102,8 @@ class FrontendController extends Controller
     function abroadstudies()
     {
         $abroad_page = Page::where('status', 1)->where('slug', 'abroad-studies')->first();
-        $abroadstudies = Country::where('status', 1)->oldest("order")->get();
-        return view('frontend.abroad.index', compact('abroadstudies', 'abroad_page'));
+        $projects = Country::where('status', 1)->oldest("order")->get();
+        return view('frontend.abroad.index', compact('projects', 'abroad_page'));
     }
     function abroadstudiesingle($slug)
     {

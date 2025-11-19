@@ -11,58 +11,73 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-      <!--=====pages hero start=======-->
-      <div class="page-hero-area _relative about-banner"  >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 m-auto text-center">
-                    <div class="page-hero-hadding">
-                        <h1>Countries We Offer</h1>
-                        <div class="space16"></div>
-                        <div class="page-hero-p">
-                            <a href="{{ route('frontend.home') }}">Home</a>
-                            <span><i class="fa-solid fa-angle-right"></i></span>
-                            <p>Countries</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       <!--===== HERO AREA STARTS =======-->
+       <div class="about-header-area"
+       style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}'); 
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: center;">
+
+       <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" alt="" class="elements1 aniamtion-key-1">
+
+       <img src="{{ asset('frontend/assets/img/elements/star2.png') }}" alt="" class="star2 keyframe5">
+
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-3 m-auto">
+                   <div class="about-inner-header heading9 text-center">
+                       <h1>{{ $title ?? 'About Us' }}</h1>
+                       <a href="{{ url('/') }}">
+                           Home <i class="fa-solid fa-angle-right"></i>
+                           <span>{{ $title ?? 'About Us' }}</span>
+                       </a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!--===== HERO AREA ENDS =======-->
+   <!--===== project AREA STARTS =======-->
+<div class="work13-section-area sp1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 m-auto">
+          {{-- <div class="work-haader text-center heading20 space-margin60">
+            <h5 data-aos="fade-left" data-aos-duration="800">
+              <img src="assets/img/icons/logo-icons8.svg" alt="">{{ $settings['countries_title'] ?? '' }}
+            </h5>
+            <div class="space16"></div>
+            <h2 class="text-anime-style-3">{{ $settings['countries_subtitle'] ?? '' }}</h2>
+          </div> --}}
         </div>
-        <img class="page-hero-element1 aniamtion-key-2" src="assets/img/shapes/page-header-element1.svg" alt="">
-        <img class="page-hero-element2 aniamtion-key-3" src="assets/img/shapes/page-header-element2.svg" alt="">
-        <img class="page-hero-element3 aniamtion-key-1" src="assets/img/shapes/page-header-element1.svg" alt="">
-        <img class="page-hero-element4 aniamtion-key-2" src="assets/img/shapes/page-header-element2.svg" alt="">
       </div>
-      <!--=====pages hero end=======-->
-      <div class="countrie3 sp3 _relative"  style="background-color: #FFF8F6;">
-        <div class="container">
-            <div class="row">
-                @foreach($abroadstudies as $country)
-                    <div class="col-lg-4 col-md-6">
-                        <a href="{{route('frontend.abroadsingle',$country->slug)}}" class="stretched-card-link">
-                            <div class="countrie3-box">
-                                <div class="countrie3-img img100 img5">
-                                    <img src="{{ asset($country->image) }}" alt="{{ $country->name }}" class="country-img" style="height: 280px; object-fit:cover;">
-                                </div>
-                                <div class="countrie3-hadding">
-                                    <h2 class="" style="color: white; font-size: 22px">
-                                        {{ $country->title }}
-                                    </h2>
-                                    <div class="space16"></div>
-                                    <p>{{ Str::limit($country->short_description, 120) }}</p>
-                                    <div class="space16"></div>
-                                    <span class="w-learn-more">
-                                        Read More <i class="fa-solid fa-arrow-right"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
+      <div class="row">
+        @foreach ($projects as $project)
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+            <div class="project13-boxrea">
+  
+              {{-- Dynamic Image (Only One) --}}
+              <div class="img1 image-anime">
+                <img src="{{ asset($project->image) }}" alt="">
+              </div>
+  
+              {{-- Dynamic Content --}}
+              <div class="content-area">
+                <span>#{{ $project->title ?? 'Advertising Agency' }}</span>
+                <div class="space16"></div>
+                <a href="{{ route('frontend.projectsingle', $project->slug ?? $project->id) }}">
+                  {{ $project->short_description }}
+                </a>
+              </div>
+  
             </div>
-            <div class="space50"></div>
-        </div>
+          </div>
+        @endforeach
+      </div>
     </div>
+  </div>
+  <!--===== project AREA ENDS =======-->
+
 @endsection
 
 
