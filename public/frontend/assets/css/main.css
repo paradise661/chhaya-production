@@ -28805,7 +28805,7 @@ Location:
 }
 
 .slider-section-area.slider-inner {
-  background: var(--ztc-text-text-4);
+  background: #ff6a05;
 }
 .slider-section-area.slider-inner .sldier-head p {
   color: var(--ztc-text-text-1);
