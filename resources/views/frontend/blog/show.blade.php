@@ -61,7 +61,6 @@
                         <h2>{!! $blogsingle->title !!}</h2>
 
                         <div class="space34"></div>
-
                         {{-- Blog Image --}}
                         <div class="img1">
                             <img src="{{ asset($blogsingle->image) }}" alt="{{ $blogsingle->title }}">
@@ -116,7 +115,6 @@
                                 </a>
                             </div>
                         </div> --}}
-
                     </div>
                 </div>
             </div>

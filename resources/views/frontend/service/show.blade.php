@@ -63,7 +63,7 @@
 
                         {{-- Blog Image --}}
                         <div class="img11">
-                            <img src="{{ asset($services->image) }}" alt="{{ $services->title }}">
+                            <img src="{{ asset($services->image_1) }}" alt="{{ $services->title }}">
                         </div>
                         <div class="space32"></div>
                         {{-- Blog Description --}}
