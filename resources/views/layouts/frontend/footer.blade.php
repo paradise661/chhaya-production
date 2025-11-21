@@ -41,12 +41,11 @@
       <div class="col-lg-3 col-md-6">
         <div class="footer-logo-area3">
           <h3>Projects</h3>
-          
-          <form action="#">
-            <input type="text" placeholder="Enter Your email">
-            <div class="space16"></div>
-            <button class="header-btn21"> </button>
-          </form>
+          <ul>
+            <li><a href="404-4.html"><img src="assets/img/icons/email.svg" alt=""><span>{{ $settings['contact_email'] ?? '' }}</span></a></li>
+        
+          </ul>
+         
         </div>
       </div>
     </div>
