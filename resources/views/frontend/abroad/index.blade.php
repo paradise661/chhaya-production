@@ -13,10 +13,7 @@
 @section('content')
        <!--===== HERO AREA STARTS =======-->
        <div class="about-header-area"
-       style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}'); 
-        background-repeat: no-repeat; 
-        background-size: cover; 
-        background-position: center;">
+       style="">
 
        <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" alt="" class="elements1 aniamtion-key-1">
 
@@ -26,10 +23,10 @@
            <div class="row">
                <div class="col-lg-3 m-auto">
                    <div class="about-inner-header heading9 text-center">
-                       <h1>{{ $title ?? 'About Us' }}</h1>
+                       <h1>{{ $title ?? 'Project' }}</h1>
                        <a href="{{ url('/') }}">
                            Home <i class="fa-solid fa-angle-right"></i>
-                           <span>{{ $title ?? 'About Us' }}</span>
+                           <span>{{ $title ?? 'Project' }}</span>
                        </a>
                    </div>
                </div>
@@ -58,14 +55,14 @@
   
               {{-- Dynamic Image (Only One) --}}
               <div class="img1 image-anime">
-                <img src="{{ asset($project->image) }}" alt="">
+                <img src="{{ asset($project->image) }}" class="project-img" alt="">
               </div>
   
               {{-- Dynamic Content --}}
               <div class="content-area">
                 <span>#{{ $project->title ?? 'Advertising Agency' }}</span>
                 <div class="space16"></div>
-                <a href="{{ route('frontend.projectsingle', $project->slug ?? $project->id) }}">
+                <a href="{{ route('frontend.projectsingle', $project->slug ?? $project->id) }}" class="line-clamp-6">
                   {{ $project->short_description }}
                 </a>
               </div>

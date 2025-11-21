@@ -163,4 +163,5 @@ if (! function_exists('formatBlogDate')) {
 
         return $formattedDate;
     }
+    
 }

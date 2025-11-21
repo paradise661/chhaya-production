@@ -123,7 +123,7 @@
         </div>
     </div>
     <!--===== MORE BLOGS =====-->
-    @if ($blogs->count() > 0)
+    {{-- @if ($blogs->count() > 0)
         <div class="blog1-scetion-area sp2 bg2">
             <div class="container">
                 <div class="row">
@@ -161,5 +161,5 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
 @endsection

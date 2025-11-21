@@ -15,10 +15,7 @@
 
     <!--===== HERO AREA STARTS =======-->
     <div class="about-header-area"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}'); 
-         background-repeat: no-repeat; 
-         background-size: cover; 
-         background-position: center;">
+        style="">
 
         <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" alt="" class="elements1 aniamtion-key-1">
 
@@ -28,10 +25,10 @@
             <div class="row">
                 <div class="col-lg-3 m-auto">
                     <div class="about-inner-header heading9 text-center">
-                        <h1>{{ $title ?? 'About Us' }}</h1>
+                        <h1>{{ $title ?? 'Service' }}</h1>
                         <a href="{{ url('/') }}">
                             Home <i class="fa-solid fa-angle-right"></i>
-                            <span>{{ $title ?? 'About Us' }}</span>
+                            <span>{{ $title ?? 'Service' }}</span>
                         </a>
                     </div>
                 </div>
@@ -39,12 +36,12 @@
         </div>
     </div>
     <!--===== HERO AREA ENDS =======-->
-    <div class="service13-section-area sp2">
+    <div class="service13-section-area sp2"  style=" background-color:white;">
         <div class="container">
           <div class="row">
             @foreach($services as $index => $service)
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 100) }}">
-                    <div class="service13-boxarea">
+                <div class="col-lg-4 col-md-6 " data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 100) }}">
+                    <div class="service13-boxarea shadow">
         
                         {{-- Dynamic Icon --}}
                         <div class="icons">

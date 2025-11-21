@@ -418,15 +418,15 @@
     
                     {{-- Blog Image --}}
                     <div class="img1 image-anime">
-                        <img src="{{ asset( $blog->image) }}" alt="{{ $blog->title }}">
+                        <img src="{{ asset( $blog->image) }}" alt="{{ $blog->title }}" class="blog-img">
                     </div>
     
                     <div class="space24"></div>
     
                     {{-- Blog Content --}}
                     <div class="blog-content-area">
-                        <a href="{{ route('frontend.blogsingle', $blog->slug) }}">{{ $blog->title }}</a>
-                        <div class="space16"></div>
+                        <a href="{{ route('frontend.blogsingle', $blog->slug) }}" class="line-clamp-2">{{ $blog->title }}</a>
+                        {{-- <div class="space16"></div> --}}
                         <p>{{ Str::limit($blog->excerpt, 120) }}</p>
                         <div class="space24"></div>
                         <a href="{{ route('frontend.blogsingle', $blog->slug) }}" class="readmore">Learn More<i class="fa-solid fa-arrow-right"></i></a>

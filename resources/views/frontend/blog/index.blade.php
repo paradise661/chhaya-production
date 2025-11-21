@@ -14,10 +14,7 @@
 @section('content')
     <!--===== HERO AREA STARTS =======-->
     <div class="about-header-area"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}'); 
-         background-repeat: no-repeat; 
-         background-size: cover; 
-         background-position: center;">
+        style="">
 
         <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" alt="" class="elements1 aniamtion-key-1">
 
@@ -27,10 +24,10 @@
             <div class="row">
                 <div class="col-lg-3 m-auto">
                     <div class="about-inner-header heading9 text-center">
-                        <h1>{{ $title ?? 'About Us' }}</h1>
+                        <h1>{{ $title ?? 'Blogs' }}</h1>
                         <a href="{{ url('/') }}">
                             Home <i class="fa-solid fa-angle-right"></i>
-                            <span>{{ $title ?? 'About Us' }}</span>
+                            <span>{{ $title ?? 'Blogs' }}</span>
                         </a>
                     </div>
                 </div>
@@ -42,27 +39,21 @@
             <div class="row">
               @foreach($blog as $index => $blog)
                   <div class="col-lg-4 col-md-6" data-aos="zoom-out" data-aos-duration="{{ 800 + ($index * 200) }}">
-                      
                       <div class="blog-auhtor-boxarea">
-                          
                           {{-- Author and Date --}}
                           <ul>
                               <li><a href="#"><i class="fa-regular fa-circle-user"></i>{{ $blog->author }}</a></li>
                               <li class="m-0"><a href="#"><i class="fa-solid fa-calendar-days"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('d M Y') }}</a></li>
                           </ul>
-          
                           <div class="space24"></div>
-          
                           {{-- Blog Image --}}
                           <div class="img1 image-anime">
-                              <img src="{{ asset( $blog->image) }}" alt="{{ $blog->title }}">
+                              <img src="{{ asset( $blog->image) }}" alt="{{ $blog->title }}" class="blog-img">
                           </div>
-          
                           <div class="space24"></div>
-          
                           {{-- Blog Content --}}
                           <div class="blog-content-area">
-                              <a href="{{ route('frontend.blogsingle', $blog->slug) }}">{{ $blog->title }}</a>
+                              <a href="{{ route('frontend.blogsingle', $blog->slug) }}" class="line-clamp-2">{{ $blog->title }}</a>
                               <div class="space16"></div>
                               <p>{{ Str::limit($blog->excerpt, 120) }}</p>
                               <div class="space24"></div>

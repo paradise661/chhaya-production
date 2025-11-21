@@ -31763,5 +31763,44 @@ Location:
 }
 .img11 img{
   height:400px !important;
+  width:100%;
+  object-fit:cover !important;
+}
+.team-img{
+  height:150px;
   object-fit:cover;
+}
+.project-img {
+  height:320px !important;
+  object-fit:cover;
+}
+.blog-img{
+  height:280px !important;
+}
+.line-clamp-2 {
+  display: -webkit-box !important;        /* required for -webkit-line-clamp */
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;      /* number of lines to show */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;    /* nice ellipsis where supported */
+  /* optional: preserve words (avoid breaking mid-word) */
+  word-break: break-word !important;
+}
+.line-clamp-3 {
+  display: -webkit-box;        /* required for -webkit-line-clamp */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;      /* number of lines to show */
+  overflow: hidden;
+  text-overflow: ellipsis;    /* nice ellipsis where supported */
+  /* optional: preserve words (avoid breaking mid-word) */
+  word-break: break-word;
+}
+.line-clamp-6 {
+  display: -webkit-box !important;        /* required for -webkit-line-clamp */
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 6 !important;      /* number of lines to show */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;    /* nice ellipsis where supported */
+  /* optional: preserve words (avoid breaking mid-word) */
+  word-break: break-word !important;
 }
