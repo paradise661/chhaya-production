@@ -31786,6 +31786,15 @@ Location:
   /* optional: preserve words (avoid breaking mid-word) */
   word-break: break-word !important;
 }
+.line-clamp-4 {
+  display: -webkit-box !important;        /* required for -webkit-line-clamp */
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 4 !important;      /* number of lines to show */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;    /* nice ellipsis where supported */
+  /* optional: preserve words (avoid breaking mid-word) */
+  word-break: break-word !important;
+}
 .line-clamp-3 {
   display: -webkit-box;        /* required for -webkit-line-clamp */
   -webkit-box-orient: vertical;

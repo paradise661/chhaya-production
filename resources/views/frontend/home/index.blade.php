@@ -267,7 +267,7 @@
   
                   <div class="space24"></div>
                   {{-- Dynamic Description --}}
-                  <p>“{!! $test->description !!}”</p>
+                  <p class="line-clamp-4">“{!! $test->description !!}”</p>
                   <div class="space24"></div>
                   <div class="name-area">
                       <div class="name-text">
