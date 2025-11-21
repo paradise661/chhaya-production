@@ -31767,7 +31767,7 @@ Location:
   object-fit:cover !important;
 }
 .team-img{
-  height:150px;
+  height:150px !important;
   object-fit:cover;
 }
 .project-img {
