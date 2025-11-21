@@ -62,7 +62,7 @@
                         {{-- <div class="space34"></div> --}}
 
                         {{-- Blog Image --}}
-                        <div class="img1">
+                        <div class="img11">
                             <img src="{{ asset($services->image) }}" alt="{{ $services->title }}">
                         </div>
                         <div class="space32"></div>
@@ -74,7 +74,7 @@
                 </div>
                 {{-- RIGHT SIDE (Sidebar) --}}
                 <div class="col-lg-4">
-                    <div class="blog-sidebar-area">
+                    <div class="blog-sidebar-area service-side">
                         <div class="space32"></div>
                         {{-- Recent Posts --}}
                         <div class="posts-area">

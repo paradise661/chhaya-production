@@ -2770,7 +2770,7 @@ Location:
 
 /*============= COMMON CSS AREA ENDS===============*/
 .sp1 {
-  padding: 100px 0 100px;
+  padding: 63px 0 100px;
 }
 @media (max-width: 767px) {
   .sp1 {
@@ -31765,6 +31765,7 @@ Location:
   height:400px !important;
   width:100%;
   object-fit:cover !important;
+  border-radius:20px ;
 }
 .team-img{
   height:150px !important;
@@ -31815,4 +31816,6 @@ Location:
 }
 .footer13-section-area{
   background-color:#f6f4fb;
+}.service-side{
+  margin-top:32px ! important;
 }
