@@ -12,62 +12,68 @@
 @extends('layouts.frontend.master')
 
 @section('content')
-    <div class="page-hero-area _relative about-banner" >
+    <!--===== HERO AREA STARTS =======-->
+    <div class="about-header-area"
+        style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}'); 
+         background-repeat: no-repeat; 
+         background-size: cover; 
+         background-position: center;">
+
+        <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" alt="" class="elements1 aniamtion-key-1">
+
+        <img src="{{ asset('frontend/assets/img/elements/star2.png') }}" alt="" class="star2 keyframe5">
+
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 m-auto text-center">
-                    <div class="page-hero-hadding">
-                        <h1>Our Blog </h1>
-                        <div class="space16"></div>
-                        <div class="page-hero-p">
-                            <a href="{{ route('frontend.home') }}">Home</a>
-                            <span><i class="fa-solid fa-angle-right"></i></span>
-                            <p>Blog</p>
-                        </div>
+                <div class="col-lg-3 m-auto">
+                    <div class="about-inner-header heading9 text-center">
+                        <h1>{{ $title ?? 'About Us' }}</h1>
+                        <a href="{{ url('/') }}">
+                            Home <i class="fa-solid fa-angle-right"></i>
+                            <span>{{ $title ?? 'About Us' }}</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="blog-post-all sp3"  style="background-color: #FFF8F6;">
+    <div class="blog13-section-area sp2">
         <div class="container">
             <div class="row">
-                @foreach ($blog as $blog)
-                <div class="col-lg-4 col-md-6">
-                    <a href="{{ route('frontend.blogsingle', $blog->slug) }}" class="stretched-card-link">
-                        <div class="single-blog-post single-blog-post2">
-                            <div class="blog-post-img img100">
-                                <img src="{{ $blog->image ? asset($blog->image) : asset('frontend/assets/img/blog/default.png') }}"
-                                    alt="{{ $blog->title }}" style="height: 280px; object-fit: cover">
-                            </div>
-                            <div class="hadding2 blog-post-hadding">
-                                <h3 class="weight-600 blog-heading">
-                                    {{ Str::limit($blog->title, 40) }}
-                                </h3>
-                                <div class="space8"></div>
-                                <p>{{ Str::limit($blog->short_description ?? strip_tags($blog->description), 120) }}</p>
-                                <div class="blog-post-border"></div>
-                                <ul class="blog-post-icons">
-                                    <li>
-                                        <img src="{{ asset('frontend/assets/img/icons/blog-post-icon1.svg') }}" alt="">
-                                        {{ $blog->created_at->format('d M Y') }}
-                                    </li>
-                                    {{-- <li>
-                                        <img src="{{ asset('frontend/assets/img/icons/blog-post-icon2.svg') }}" alt="">
-                                        {{ $blog->comments_count ?? 0 }} Comments
-                                    </li> --}}
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-
-
-            </div>
-
-            <div class="space40"></div>
-
+              @foreach($blog as $index => $blog)
+                  <div class="col-lg-4 col-md-6" data-aos="zoom-out" data-aos-duration="{{ 800 + ($index * 200) }}">
+                      
+                      <div class="blog-auhtor-boxarea">
+                          
+                          {{-- Author and Date --}}
+                          <ul>
+                              <li><a href="#"><i class="fa-regular fa-circle-user"></i>{{ $blog->author }}</a></li>
+                              <li class="m-0"><a href="#"><i class="fa-solid fa-calendar-days"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('d M Y') }}</a></li>
+                          </ul>
+          
+                          <div class="space24"></div>
+          
+                          {{-- Blog Image --}}
+                          <div class="img1 image-anime">
+                              <img src="{{ asset( $blog->image) }}" alt="{{ $blog->title }}">
+                          </div>
+          
+                          <div class="space24"></div>
+          
+                          {{-- Blog Content --}}
+                          <div class="blog-content-area">
+                              <a href="{{ route('frontend.blogsingle', $blog->slug) }}">{{ $blog->title }}</a>
+                              <div class="space16"></div>
+                              <p>{{ Str::limit($blog->excerpt, 120) }}</p>
+                              <div class="space24"></div>
+                              <a href="{{ route('frontend.blogsingle', $blog->slug) }}" class="readmore">Learn More<i class="fa-solid fa-arrow-right"></i></a>
+                          </div>
+                          
+                      </div>
+                  </div>
+              @endforeach
+          </div>
+          
         </div>
-    </div>
+      </div>
 @endsection
