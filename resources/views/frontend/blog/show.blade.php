@@ -104,18 +104,18 @@
                         <div class="space32"></div>
                         <div class="space32"></div>
                         {{-- Contact Section --}}
-                        <div class="others-area">
+                        {{-- <div class="others-area">
                             <h3>If You Need Any Help Contact With Us</h3>
                             <div class="space16"></div>
 
-                            {{-- Example Dynamic Contact --}}
+                           
                             <div class="btn-area">
                                 <a href="tel:{{ $blog_page->contact ?? '1234567890' }}" class="header-btn1">
                                     {{ $blog_page->contact ?? '123-456-7890' }}
                                     <span><i class="fa-solid fa-arrow-right"></i></span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
