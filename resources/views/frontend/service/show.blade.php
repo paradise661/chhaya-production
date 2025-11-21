@@ -59,7 +59,7 @@
                         {{-- Blog Title --}}
                         <h2>{!! $services->title !!}</h2>
 
-                        <div class="space34"></div>
+                        {{-- <div class="space34"></div> --}}
 
                         {{-- Blog Image --}}
                         <div class="img1">
