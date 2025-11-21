@@ -43,9 +43,9 @@
 
             <div class="col-lg-6">
                 <div class="heading2 contact-header">
-                    <h5>Contact Us</h5>
-                    <h2>Get in Touch with SEOC We Value Your Connection</h2>
-                    <p>Our dedicated team is committed to providing prompt and effective support to ensure your needs are met. We believe in open communication and are always ready to listen. Reach out to us via phone, email, or live chat, or visit our office during business hours.</p>
+                    <h5>{{ $settings['contact_form_title'] ?? '' }}</h5>
+                    <h2>{{ $settings['contact_form_subtitle'] ?? '' }}</h2>
+                    <p>{{ $settings['contact_form_description'] ?? '' }}</p>
 
                     <div class="space32"></div>
 
@@ -56,7 +56,8 @@
                             </div>
                             <div class="content">
                                 <p>Phone Number</p>
-                                <a href="tel:123-456-7890">123-456-7890</a>
+                                <a href="tel:123-456-7890">  {{ $settings['contact_phone'] ?? '+123456789' }}
+                                </a>
                             </div>
                         </div>
 
@@ -66,7 +67,8 @@
                             </div>
                             <div class="content">
                                 <p>Email Address</p>
-                                <a href="mailto:Infoseoc@gmail.com">Infoseoc@gmail.com</a>
+                                <a href="mailto:Infoseoc@gmail.com">{{ $settings['contact_email'] ?? 'email@gmail.com' }}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -78,9 +80,7 @@
                             </div>
                             <div class="content">
                                 <a href="#">
-                                    8708 Technology Forest Pl Suite 
-                                    <br class="d-lg-block d-none">
-                                    125 -G, The Woodlands, TX 773
+                                    {{ $settings['contact_phone'] ?? '+123456789' }}
                                 </a>
                             </div>
                         </div>
