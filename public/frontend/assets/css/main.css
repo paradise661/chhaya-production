@@ -31804,3 +31804,6 @@ Location:
   /* optional: preserve words (avoid breaking mid-word) */
   word-break: break-word !important;
 }
+.footer13-section-area{
+  background-color:#f6f4fb;
+}

@@ -310,16 +310,13 @@
       </div>
     </div>
     <div class="row">
-
       @foreach($teams as $index => $team)
       <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 200) }}">
           <div class="team13-boxarea">
-  
               {{-- Dynamic Image --}}
               <div class="img1 image-anime">
                   <img src="{{ asset( $team->image) }}" style="height:250px !important;"  class="team-img"  alt="">
               </div>
-  
               <div class="space24"></div>
   
               <div class="content-area">

@@ -42,8 +42,9 @@
         <div class="footer-logo-area3">
           <h3>Projects</h3>
           <ul>
-            <li><a href="404-4.html"><img src="assets/img/icons/email.svg" alt=""><span>{{ $settings['contact_email'] ?? '' }}</span></a></li>
-        
+            @foreach ($footer_countries_1 as $country)
+            <li><a href="{{ route('frontend.projectsingle', $country->slug) }}"><span>{{ $country->title }}</span></a></li>
+            @endforeach
           </ul>
          
         </div>
@@ -55,12 +56,13 @@
       <div class="col-lg-12">
         <div class="copyright-area">
           <div class="pera">
-            <p>ⓒCopyright 2024 SEOC . All rights reserved</p>
+            <p>  © {{ date('Y') }}
+              {!! $settings['site_copyright'] ?? 'u00a9 Destination Marker. All rights reserved' !!}</p>
           </div>
-          <ul>
+          {{-- <ul>
             <li><a href="#">Terms & Conditions</a></li>
             <li><a href="#" class="m-0"> Privacy Policy </a></li>
-          </ul>
+          </ul> --}}
         </div>
       </div>
     </div>
