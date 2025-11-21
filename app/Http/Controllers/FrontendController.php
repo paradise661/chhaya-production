@@ -107,11 +107,11 @@ class FrontendController extends Controller
     }
     function abroadstudiesingle($slug)
     {
-        $abroad_page = Page::where('status', 1)->where('slug', 'abroad-studies')->first();
-        $abroadstudiesingle = Country::where('slug', $slug)->where('status', 1)->first();
-        $abroadstudies = Country::where('id', '!=', $abroadstudiesingle->id)->where('status', 1)->oldest("order")->limit(5)->get();
-        $universities = University::where('country_id', $abroadstudiesingle->id)->where('status', 1)->oldest("order")->get();
-        return view('frontend.abroad.show', compact('abroadstudiesingle', 'abroad_page', 'universities', 'abroadstudies'));
+        $projects_page = Page::where('status', 1)->where('slug', 'abroad-studies')->first();
+        $projectsstudiesingle = Country::where('slug', $slug)->where('status', 1)->first();
+        $projectsstudies = Country::where('id', '!=', $projectsstudiesingle->id)->where('status', 1)->oldest("order")->limit(5)->get();
+        $universities = University::where('country_id', $projectsstudiesingle->id)->where('status', 1)->oldest("order")->get();
+        return view('frontend.abroad.show', compact('projectsstudiesingle', 'projects_page', 'universities', 'projectsstudies'));
     }
     function course()
     {

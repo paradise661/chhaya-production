@@ -31754,3 +31754,14 @@ Location:
       transform: translateZ(0);
   }
 }
+.about-header-area {
+  /* background: linear-gradient(
+      rgba(254, 64, 105, 0.05),  /* super light pink */
+      /* rgba(254, 64, 105, 0.05)
+  ),  */ 
+ background-color: #f6f4fb; /* fallback background color */
+}
+.img11 img{
+  height:400px !important;
+  object-fit:cover;
+}

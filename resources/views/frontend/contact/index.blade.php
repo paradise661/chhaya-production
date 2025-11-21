@@ -13,10 +13,7 @@
 @section('content')
 <!--===== HERO AREA STARTS =======-->
 <div class="about-header-area" 
-     style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;">
+     style="">
 
     <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" 
          alt="" class="elements1 aniamtion-key-1">
@@ -100,24 +97,22 @@
                 <div class="contact-form-area">
                     <h4>Get In Touch</h4>
                     <div class="row">
+                        <form action="{{ route('frontend.contact.submit') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <input type="text" placeholder="First Name">
+                                <input type="text" name="name"  placeholder=" Name">
+                            </div>
+                        </div>
+                       
+                        <div class="col-lg-12">
+                            <div class="input-area">
+                                <input type="email"  name="email" placeholder="Email Address">
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="input-area">
-                                <input type="text" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="input-area">
-                                <input type="email" placeholder="Email Address">
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="input-area">
-                                <input type="number" placeholder="Phone Number">
+                                <input type="number"name="phone"  placeholder="Phone Number">
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -131,6 +126,7 @@
                                 <span><i class="fa-solid fa-arrow-right"></i></span>
                             </button>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -186,7 +182,7 @@
 <!-- Google Map -->
 <div class="mapouter">
     <div class="gmap_canvas">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4506257.120552435!2d88.67021924228865!3d21.954385721237916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1704088968016!5m2!1sen!2sbd"
+        <iframe src="{{ $settings['site_location_url'] ?? '' }}"
                 width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
