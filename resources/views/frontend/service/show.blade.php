@@ -83,7 +83,7 @@
                                 <div class="post-auhtor-area {{ $loop->iteration == 2 ? 'box2' : '' }}">
                                     <div class="img1">
                                         <a href="{{ route('frontend.singleservice', $item->slug) }}">
-                                            <img src="{{ asset($item->image) }}" alt="{{ $item->title }}">
+                                            <img src="{{ asset($item->image_1) }}" alt="{{ $item->title }}">
                                         </a>
                                     </div>
                                     <div class="content">
