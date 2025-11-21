@@ -1,5 +1,4 @@
 @extends('layouts.frontend.master')
-
 @section('seo')
     @include('frontend.seo', [
         'name' => $contact_page->seo_title ?? '',
@@ -11,9 +10,7 @@
         'updated_at' => $contact_page->updated_at,
     ])
 @endsection
-
 @section('content')
-
 <!--===== HERO AREA STARTS =======-->
 <div class="about-header-area" 
      style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}');
@@ -42,7 +39,6 @@
     </div>
 </div>
 <!--===== HERO AREA ENDS =======-->
-
 <!--===== CONTACT AREA STARTS =======-->
 <div class="contact-main-inner-area sp1">
     <div class="container">
@@ -77,9 +73,7 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="space50"></div>
-
                     <div class="number-address-area2">
                         <div class="phone-number">
                             <div class="img1">
@@ -101,7 +95,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-1"></div>
             <div class="col-lg-5">
                 <div class="contact-form-area">
@@ -144,7 +137,6 @@
         </div>
     </div>
 </div>
-
 <!-- Location Boxes -->
 {{-- <div class="location-section-area sp2 bg2">
     <div class="container">
@@ -191,7 +183,6 @@
 
     </div>
 </div> --}}
-
 <!-- Google Map -->
 <div class="mapouter">
     <div class="gmap_canvas">
@@ -200,7 +191,6 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </div>
-
 <!-- CTA Section -->
 {{-- <div class="cta-section-area">
     <img src="{{ asset('frontend/assets/img/bg/cta-bg1.png') }}" 

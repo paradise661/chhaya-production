@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
     <!--=====  JS SCRIPT LINK =======-->
-    <script src="{{ asset('frontend/assets/js/plugins/jquery-3-6-0.min.js') }}"></script>
+   
     @stack('css')
 </head>
 <body>
@@ -56,6 +56,7 @@
 
     @include('layouts.frontend.footer')
     <!--===== JS SCRIPT LINK =======-->
+    <script src="{{ asset('frontend/assets/js/plugins/jquery-3-6-0.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/plugins/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/plugins/fontawesome.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/plugins/aos.js') }}"></script>
