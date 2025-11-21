@@ -218,7 +218,7 @@
             <div class="content-area">
               <span>#{{ $project->title ?? 'Advertising Agency' }}</span>
               <div class="space16"></div>
-              <a href="{{ route('frontend.projectsingle', $project->slug ?? $project->id) }}">
+              <a href="{{ route('frontend.projectsingle', $project->slug ?? $project->id) }}"  class="line-clamp-6">
                 {{ $project->short_description }}
               </a>
             </div>
