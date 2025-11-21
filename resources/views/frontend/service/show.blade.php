@@ -65,7 +65,7 @@
                         <div class="img1">
                             <img src="{{ asset($services->image) }}" alt="{{ $services->title }}">
                         </div>
-
+                        <div class="space32"></div>
                         {{-- Blog Description --}}
                         <p>{!! $services->description !!}</p>
 

@@ -14,10 +14,7 @@
 @section('content')
     <!--===== HERO AREA STARTS =======-->
     <div class="about-header-area"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/inner-header.png') }}'); 
-         background-repeat: no-repeat; 
-         background-size: cover; 
-         background-position: center;">
+        style="">
 
         <img src="{{ asset('frontend/assets/img/elements/elements1.png') }}" alt="" class="elements1 aniamtion-key-1">
 
