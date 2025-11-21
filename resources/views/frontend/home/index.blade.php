@@ -317,7 +317,7 @@
   
               {{-- Dynamic Image --}}
               <div class="img1 image-anime">
-                  <img src="{{ asset( $team->image) }}" alt="">
+                  <img src="{{ asset( $team->image) }}" style="height:250px !important;"  class="team-img"  alt="">
               </div>
   
               <div class="space24"></div>
