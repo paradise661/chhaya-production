@@ -364,9 +364,9 @@
           <div class="space16"></div>
           <p data-aos="fade-left" data-aos-duration="1000"> {{ $settings['courses_subtitle'] ?? '' }}</p>
           <div class="space32"></div>
-          <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
+          {{-- <div class="btn-area1" data-aos="fade-left" data-aos-duration="1200">
             <a href="contact.html" class="header-btn21">Get A Free Proposal <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
+          </div> --}}
         </div>
       </div>
       <div class="col-lg-1"></div>
