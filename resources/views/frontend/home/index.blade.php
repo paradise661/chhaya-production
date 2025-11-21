@@ -211,7 +211,7 @@
 
             {{-- Dynamic Image (Only One) --}}
             <div class="img1 image-anime">
-              <img src="{{ asset($project->image) }}" alt="">
+              <img src="{{ asset($project->image) }}"  class="project-img" alt="">
             </div>
 
             {{-- Dynamic Content --}}
