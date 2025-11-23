@@ -449,7 +449,7 @@
           <div class="space40"></div>
           <div class="btn-area1" data-aos="fade-up" data-aos-duration="1200">
             {{-- <a href="contact.html" class="header-btn21">Get Started Today <i class="fa-solid fa-arrow-right"></i></a> --}}
-            <a href="contact.html" class="header-btn21 btn2">Contact Us<i class="fa-solid fa-arrow-right"></i></a>
+            <a href="{{route('frontend.contact')}}" class="header-btn21 btn2">Contact Us<i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
