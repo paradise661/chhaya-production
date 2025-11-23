@@ -61,10 +61,10 @@
                         <div class="posts-area">
                             <h3>Recent Post</h3>
                             @foreach ($projectsstudies as $item)
-                                <div class="post-auhtor-area {{ $loop->iteration == 2 ? 'box2' : '' }}">
-                                    <div class="img1">
+                                <div class="post-auhtor-area ">
+                                    <div class="img1" style="width:80px; height:100px;">
                                         <a href="{{ route('frontend.projectsingle', $item->slug) }}">
-                                            <img src="{{ asset($item->image) }}" alt="{{ $item->title }}">
+                                            <img src="{{ asset($item->image) }}" style="width:100% !important; height:100% !important;" alt="{{ $item->title }}">
                                         </a>
                                     </div>
                                     <div class="content">

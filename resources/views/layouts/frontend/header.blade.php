@@ -2,7 +2,7 @@
   <div class="container">
 
     <!-- Logo -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{route('frontend.home')}}">
       <img src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('frontend/assets/images/logo1.png') }}" alt="logo" class="header-logo">
     </a>
 
