@@ -376,12 +376,11 @@
               <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-duration="{{ 800 + ($index * 100) }}">
                   <div class="img1">
                       {{-- Dynamic Image --}}
-                      <img src="{{ asset('uploads/course/' . $course->image) }}" alt="{{ $course->title }}">
+                      <img src="{{ asset( $course->image) }}" alt="{{ $course->title }}">
                   </div>
               </div>
           @endforeach
       </div>
-      
       </div>
     </div>
   </div>
@@ -458,10 +457,4 @@
   </div>
 </div>
 <!--===== CTA AREA ENDS =======-->
-
-
-
-
-
-
 @endsection

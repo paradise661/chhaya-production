@@ -35,15 +35,16 @@ if (! function_exists('deletesettingmedia')) {
     function deletesettingmedia($image, $old_image, $image_name, $siteSetting, $siteSettings)
     {
         if ($image) {
-            removeFile($old_image);  // delete old image from S3
+            removeFile($old_image);
             $siteSetting[$image_name] = $image;
         } else {
-            $siteSetting[$image_name] = $siteSettings[$image_name];
+            $siteSetting[$image_name] = $siteSettings[$image_name] ?? null;
         }
 
         return $siteSetting[$image_name];
     }
 }
+
 if (! function_exists('make_slug')) {
     function make_slug($string)
     {

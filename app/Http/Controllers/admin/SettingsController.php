@@ -67,35 +67,45 @@ class SettingsController extends Controller
      */
     public function update(Request $request, Settings $settings)
     {
-        //
+        // Existing settings from DB
         $siteSettings = Settings::pluck('value', 'key');
-
+    
+        // Get all form values
         $siteSetting = $request->all();
-
+    
+        // Keys that store image URLs
         $settingmedias = ['site_main_logo', 'site_fav_icon', 'site_footer_logo', 'site_contact_image'];
-
+    
         foreach ($settingmedias as $media) {
-            ${$media} = updatesettingmedia($request, $media, $media);
-
-            $siteSetting[$media] = deletesettingmedia(${$media}, $siteSettings[$media], $media, $siteSetting, $siteSettings);
+    
+            // Upload new image (returns full S3 link or null)
+            $uploadedMedia = updatesettingmedia($request, $media, $media);
+    
+            // Old value from database if exists
+            $oldMedia = $siteSettings[$media] ?? null;
+    
+            // Delete old if new uploaded, else keep old
+            $siteSetting[$media] = deletesettingmedia($uploadedMedia, $oldMedia, $media, $siteSetting, $siteSettings);
         }
-
+    
+        // Save settings to DB
         foreach ($siteSetting as $key => $value) {
-
+    
             if (! is_array($value)) {
-                $value = [$value];
+                $value = [$value]; // convert to array
             }
-
-            $value = implode(',', $value);
-
-            $settings->updateOrCreate(['key' => $key], [
+    
+            $value = implode(',', $value); // store as comma string
+    
+            Settings::updateOrCreate(['key' => $key], [
                 'key' => $key,
                 'value' => $value,
             ]);
         }
-
+    
         return redirect()->back()->with('success', 'Setting updated successfully');
     }
+    
 
     /**
      * Remove the specified resource from storage.
