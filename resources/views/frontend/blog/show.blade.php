@@ -34,11 +34,9 @@
     <div class="blog-auhtor-section-area sp1">
         <div class="container">
             <div class="row">
-
                 {{-- LEFT SIDE (Main Blog Content) --}}
                 <div class="col-lg-8">
                     <div class="blog-auhtor-sidebar-area heading2">
-
                         {{-- Tags (Author & Date) --}}
                         <div class="tags-area">
                             <ul>
@@ -56,7 +54,6 @@
                                 </li>
                             </ul>
                         </div>
-
                         {{-- Blog Title --}}
                         <h2>{!! $blogsingle->title !!}</h2>
 

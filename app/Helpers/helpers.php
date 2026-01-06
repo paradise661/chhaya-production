@@ -11,7 +11,7 @@ if (! function_exists('updatesettingmedia')) {
     {
         if ($image = $request->file($name)) {
             $bucket = "chhayaproduction"; // static bucket name
-            $baseUrl = "https://s3-np1.datahub.com.np"; // static base URL
+            $baseUrl = "https://paradises3.sgp1.digitaloceanspaces.com"; // static base URL
 
             $imageName = time() . '-' . rand(0, 99) . '-' . $image->getClientOriginalName();
 
@@ -75,7 +75,7 @@ if (! function_exists('fileUpload')) {
         try {
             if ($request->hasFile($name)) {
                 $bucket = "chhayaproduction"; // static bucket name
-                $baseUrl = "https://s3-np1.datahub.com.np";
+                $baseUrl = "https://paradises3.sgp1.digitaloceanspaces.com";
 
                 // Determine folder path
                 $folderPath = $folder ? trim($folder, '/') : ''; // if folder is passed, use it; else root
@@ -129,7 +129,7 @@ if (! function_exists('removeFile')) {
     {
         try {
             $bucket = "chhayaproduction"; // same static bucket name
-            $baseUrl = "https://s3-np1.datahub.com.np";
+            $baseUrl = "https://paradises3.sgp1.digitaloceanspaces.com";
 
             // Remove base URL + bucket from the full file URL to get the relative path
             $prefix = rtrim($baseUrl, '/') . '/' . trim($bucket, '/');
